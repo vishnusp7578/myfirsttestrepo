@@ -1,0 +1,9 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:latest'
+    args: ['pwd']
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:latest'
+    args: ['ls', '-al']
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:latest'
+    args: ['bash','-c','gcloud compute scp --zone=us-central1-a --recurse /workspace/* instance-1:/home/ext_vprem_google_com/test']
+options:
+  logging: CLOUD_LOGGING_ONLY
