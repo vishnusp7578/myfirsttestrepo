@@ -5,5 +5,7 @@ steps:
     args: ['ls', '-al']
   - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:latest'
     args: ['bash','-c','gcloud compute ssh --zone=us-central1-a instance-1 --command=whoami']
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:latest'
+    args: ['bash','-c','gcloud compute scp --zone=us-central1-a --recurse /workspace/* sa_113625598237820868230@instance-1:/cloudbuild'] 
 options:
   logging: CLOUD_LOGGING_ONLY
